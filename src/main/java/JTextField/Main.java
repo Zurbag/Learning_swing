@@ -17,14 +17,28 @@ public class Main {
 //        jLabel.setText("Some Text");
 
         //Добавляем поле 20 символов
-        jPanel.add(new JTextField("default value",20));
+        jPanel.add(new JTextField("default value", 35));
 
         //Добавление свойств полю
 //        JTextField jTextField = new JTextField();
 //        jTextField.setText("Text");
 //        jTextField.setBounds(20,50,200,200);
-//        //Переотображаем и revalidate() - перепроверяет границы и поля;
 //        jPanel.add(jTextField);
+
+        //Поле для ввода пароля
+        jPanel.add(new JLabel("Пароль"));
+        jPanel.add(new JPasswordField(35));
+
+        //Большое поле для ввода тескт тут размер 5 строк по 20 символов
+        JTextArea jTextArea = new JTextArea(5, 35);
+        //Размер ограничивается зоной видимости
+        jTextArea.setLineWrap(true);
+
+        //Добаим полосу прокрутки в нее добавим текстовое поле
+        JScrollPane jScrollPane = new JScrollPane(jTextArea);
+        jPanel.add(jScrollPane);
+
+        //Переотображаем и revalidate() - перепроверяет границы и поля;
         jPanel.revalidate();
 
 
